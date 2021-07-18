@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
+
+:root {
+    --light-blue: #E0E9FC;
+    --white: #fff;
+    --black: #000;
+    --blue: #0492c2;
+    --red: #f00;
+    --white-nmfm: rgba(255, 255, 255, 0.8);
+    --black-nmfm: rgba(128, 128, 128, 0.3);
+}
+
+.light-theme {
+    --nav-bar-background: var(--blue);
+    --nav-bar-text-color: var(--light-blue);
+    --background: var(--light-blue);
+    --nmfm-shadow-up: var(--white-nmfm);
+    --nmfm-shadow-down: var(--black-nmfm);
+    --theme-icon-color: var(--blue);
+    --page-text-color: var(--blue);
+    --todo-title-color: var(--blue);
+    --todo-description-color: var(--blue);
+    --delete-icon-color: var(--blue);
+    --input-element-hover: var(--blue);
+    --error-msg-color: orange;
+    --progress-bar-text-color: var(--white);
+}
+
+.dark-theme {
+    --nav-bar-background: var(--black);
+    --nav-bar-text-color: var(--white);
+    --background: var(--black);
+    --nmfm-shadow-up: var(--white-nmfm);
+    --nmfm-shadow-down: var(--white-nmfm);
+    --theme-icon-color: var(--white);
+    --page-text-color: var(--white);
+    --todo-title-color: var(--white);
+    --todo-description-color: var(--black-nmfm);
+    --delete-icon-color: var(--white);
+    --input-element-hover: var(--white);
+    --error-msg-color: orange;
+    --progress-bar-text-color: var(--black);
+}
+
+::placeholder {
+    color: rgba(128, 128, 128, 0.8);
+    font-size: 14px;
+    padding-left: 10px;
+}
+
+body {
+    background-color: var(--background);
+}
+
+input[type="checkbox"] {
+    cursor: pointer;
+    zoom: 1.5;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
+textarea {
+    border-width: 0;
+    border-radius: 10px;
+}
+
+textarea:focus {
+    outline: none;
+}
+
+.nmfm-border-shadow-outside {
+    border-width: 0;
+    box-shadow: -2px -2px 4px var(--nmfm-shadow-up),
+        2px 2px 4px var(--nmfm-shadow-down);
+}
+
+.custom-navbar {
+    background-color: var(--nav-bar-background);
+}
+
+.todos-container {
+    margin-top: 5em;
+}
+
+.icon {
+    font-size: 22px;
+    color: var(--theme-icon-color);
+    cursor: pointer;
+}
+
+.light-theme-icon {
+    color: var(--nav-bar-text-color);
+}
+
+.page-title-heading {
+    color: var(--nav-bar-text-color);
+    font-family: "Roboto";
+    font-size: 30PX;
+    font-weight: bold;
+}
+
+.page-sub-heading {
+    color: var(--page-text-color);
+    text-align: left;
+    font-weight: bold;
+    font-size: 32PX;
+}
+
+.page-sub-heading-span {
+    font-weight: normal;
+}
+
+.input-element {
+    height: 45px;
+    width: 100%;
+    color: var(--page-text-color);
+    font-size: 20px;
+    background-color: transparent;
+    border-width: 0 0 2px 0;
+    border-color: rgba(128, 128, 128, 0.5);
+    border-radius: 5px;
+    text-align: center;
+}
+
+.input-element:focus {
+    outline: 0;
+    border-color: var(--input-element-hover);
+    border-width: 0 0 3px 0;
+}
+
+.custom-button {
+    height: 40px;
+    width: 100px;
+    color: var(--page-text-color);
+    font-family: "Roboto";
+    font-size: 16px;
+    font-weight: bold;
+    background-color: transparent;
+    border-radius: 10px;
+    user-select: none;
+    transition: box-shadow 0.5s;
+}
+
+.custom-button:active {
+    box-shadow: 2px -2px 4px var(--nmfm-shadow-up),
+        -2px 2px 4px var(--nmfm-shadow-down);
+}
+
+.custom-button:focus {
+    outline: 0;
+}
+
+.todo-container {
+    border-radius: 20px;
+}
+
+.todo-data-container {
+    width: 80%;
+    margin-top: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.todo-title {
+    color: var(--todo-title-color);
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.todo-description {
+    max-height: 150px;
+    color: var(--todo-description-color);
+    background-color: var(--white);
+    padding: 8px;
+    overflow-y: auto;
+    border-radius: 10px;
+}
+
+.undo-icon-message {
+    color: var(--todo-description-color);
+    margin-right: 16px;
+    font-size: 12px;
+}
+
+.search-todo {
+    height: 35px;
+    border-radius: 15px;
+}
+
+#searchTodoEl:focus {
+    outline: none;
+}
+
+.operation-icon {
+    color: var(--delete-icon-color);
+    margin-top: 10px;
+    margin-right: 15px;
+}
+
+.restore-icon-small {
+    font-size: 16px;
+}
+
+.operation-icon:hover {
+    color: var(--red);
+}
+
+.error-message {
+    color: var(--red);
+    font-family: "Times New Roman";
+    font-size: 14px;
+}
+
+.progress-bar-container {
+    height: 20px;
+    border-radius: 10px;
+    font-weight: 500;
+}
+
+.progress-bar-completed {
+    background-color: var(--page-text-color);
+    color: var(--progress-bar-text-color);
+}
+
+.progress-bar-uncompleted {
+    background-color: var(--red);
+    color: var(--progress-bar-text-color);
+}

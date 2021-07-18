@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/7525acb077.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="MyTodoPage.css">
+    <script src="myscripts.js"></script>
+</head>
+
+<body class="light-theme">
+    <div class="navbar custom-navbar d-flex flex-row justify-content-between fixed-top shadow">
+        <span class="page-title-heading">My Todo's</span>
+        <div>
+            <span id="trashIconToolTip" class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Goto Trash">
+                <i id="trashIconEl" class="fas fa-trash icon light-theme-icon mr-3"></i>
+            </span>
+            <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Change Theme">
+                <i id="darkModeIconEl" class="fas fa-sun icon light-theme-icon"></i>
+            </span>
+        </div>
+    </div>
+    <div class="container todos-container" id="todosContainerEl">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="page-sub-heading">Create <span class="page-sub-heading-span">Task</span></h2>
+            </div>
+            <div class="col-12 col-md-8">
+                <div class="my-2 my-md-3 text-left">
+                    <input type="text" id="todoTitleInputEl" class="input-element w-md-50" placeholder="What needs to be done?" required="" />
+                    <p id="emptyInputEl" class="error-message"></p>
+                </div>
+            </div>
+            <div class="col-12 col-md-4">
+                <div class="d-flex flex-row justify-content-between my-2 my-md-3">
+                    <button id="addDescriptionButtonEl" class="custom-button nmfm-border-shadow-outside" style="font-size:13px;">Add Description</button>
+                    <button id="addTodoButtonEl" class="custom-button nmfm-border-shadow-outside">+ Add</button>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 text-left">
+                <div class="my-3">
+                    <textarea id="todoDescriptionInputEl" rows="5" class="w-100 p-2 d-none"></textarea>
+                </div>
+            </div>
+            <div class="col-6 col-md-8">
+                <div class="my-2 my-md-3">
+                    <h2 class="page-sub-heading">My <span class="page-sub-heading-span">Tasks</span></h2>
+                </div>
+            </div>
+            <div class="col-6 col-md-4">
+                <div class="text-right my-2 my-md-3">
+                    <button id="saveTodoButtonEl" class="custom-button nmfm-border-shadow-outside">Save</button>
+                </div>
+            </div>
+            <div class="col-12 sticky-top">
+                <div id="progressBarContainer" class="progress my-2 d-none progress-bar-container">
+                    <div id="progressBarCompleted" class="progress-bar progress-bar progress-bar-completed" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div id="progressBarUnCompleted" class="progress-bar progress-bar progress-bar-uncompleted" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 text-right mt-3 mb-2 my-md-3 order-1 order-md-2">
+                <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Undo Delete">
+                    <span id="undoDescriptionEl" class="undo-icon-message"></span>
+                    <i id="undoTodoIconEl" class="fas fa-undo icon"></i>
+                </span>
+            </div>
+            <div class="col-12 col-md-6 mb-3 my-md-3 order-2 order-md-1">
+                <input type="search" id="searchTodoEl" class="search-todo w-100 pl-3 pr-2 pb-1" placeholder="Enter todo title to search" />
+            </div>
+        </div>
+        <div class="container y-2">
+            <div class="row" id="todoListContanerEl">
+            </div>
+        </div>
+    </div>
+    <div class="container todos-container d-none" id="trashContainerEl">
+        <div class="text-right mb-3">
+            <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Restore All">
+                <i id="restoreAllIconEl" class="fas fa-undo icon mr-3"></i>
+            </span>
+            <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Clear Trash">
+                <i id="clearTrashIconEl" class="fas fa-backspace icon"></i>
+            </span>
+        </div>
+        <div class="row" id="trashListContanerEl">
+        </div>
+    </div>
+</body>
+
+</html>
